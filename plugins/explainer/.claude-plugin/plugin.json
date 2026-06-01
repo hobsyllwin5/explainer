@@ -1,0 +1,10 @@
+{
+  "name": "explainer",
+  "description": "ELI5 / ELIGRAD / ELIDOC explanation skills, each bundling the pinocchio anti-hallucination reference.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Lucas Brandão",
+    "email": "pro.lucasbrandao@gmail.com",
+    "url": "https://github.com/hobsyllwin5"
+  }
+}

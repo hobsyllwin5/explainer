@@ -1,0 +1,15 @@
+{
+  "name": "explainer",
+  "owner": {
+    "name": "Lucas Brandão",
+    "email": "pro.lucasbrandao@gmail.com",
+    "url": "https://github.com/hobsyllwin5"
+  },
+  "plugins": [
+    {
+      "name": "explainer",
+      "source": "./plugins/explainer",
+      "description": "Explain-at-the-right-level skills (eli5 / eligrad / elidoc) with a bundled anti-hallucination (pinocchio) reference."
+    }
+  ]
+}
