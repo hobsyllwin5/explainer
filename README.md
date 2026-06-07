@@ -53,8 +53,10 @@ explainer/                              # repo root = plugin marketplace
 own directory — there is no supported way for `SKILL.md` to read a file at the plugin root.
 So the canonical `pinocchio_blacklist.md` at the repo root is the single source of truth, and
 `sync-references.sh` propagates it into each skill's `references/`. Edit the root file, then
-run the script. (Verified against the official skills/plugins docs — `${CLAUDE_PLUGIN_ROOT}`
-is only substituted in hook/MCP/monitor commands, not in skill body prose.)
+run the script. (Verified against the official plugins docs: files outside a plugin's own
+directory aren't copied to the install cache, so the repo-root copy can't be referenced
+post-install; and `${CLAUDE_PLUGIN_ROOT}` expands only in hook / MCP / LSP / monitor command
+strings, never in skill body prose.)
 
 ## The pieces
 
