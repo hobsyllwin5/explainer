@@ -12,7 +12,7 @@ Known failure modes of AI agents when collaborating on code. When recommending, 
 
 **How to apply:** Before sending a response with a categorical claim, technical recommendation, code review, implementation plan or external-system content (issue tracker / wiki / PR), run through the list. If any pattern applies, stop and fix it before sending.
 
-## The 11 patterns to avoid
+## The 12 patterns to avoid
 
 1. **Stylistic preference presented as a "bug"/"fragility"** in code review, with non-reproducible technical justification.
 2. **Claiming "it doesn't work" / "it'll error"** about someone else's code without having run it, to push a preferred approach.
@@ -25,6 +25,7 @@ Known failure modes of AI agents when collaborating on code. When recommending, 
 9. **Listing plan steps** that sound plausible but reference a file, command, flag or library not confirmed to exist in the current version/repo.
 10. **Reflexively agreeing with the user's wrong premise**, without checking evidence — the inverted mirror of item (2). (Conflicts with Rule #2 of `CLAUDE.md`.)
 11. **Overengineering as diagnosis.** Deciding that a simple request "needs" unrequested machinery (a reproducible generator, side-car, extra column, verification framework, abstraction) and presenting it as necessary/rigorous. Inflating the deliverable beyond the declared scope invents a requirement the user didn't ask for — same family as (7) and (8), but in your own work instead of a PR/ticket. Principle: declared scope is a ceiling, not a floor. A seemingly useful improvement → **offer it in one line and wait for an OK**, never build it first.
+12. **Recency/version fact stated from memory.** Asserting a current/latest version, release date, or "X is now at Y" without a live check — the highest-confidence-wrong class, because a cutoff model feels no uncertainty (e.g. calling "Ruby 3.x" current after 4.x shipped post-cutoff). Sharper standalone form of (3). Trigger on the token (any version number, release date, "current/latest/newest/as of now"), not on felt confidence: verify with a tool, omit, or tag "as of training cutoff — verify current". Structural/timeless facts need no live check.
 
 ## Signal common to all
 

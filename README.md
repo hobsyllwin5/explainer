@@ -49,14 +49,18 @@ explainer/                              # repo root = plugin marketplace
                     └── pinocchio_blacklist.md   # synced copy
 ```
 
-**Why three copies of the blacklist?** A Claude Code skill can only load files inside its
-own directory — there is no supported way for `SKILL.md` to read a file at the plugin root.
-So the canonical `pinocchio_blacklist.md` at the repo root is the single source of truth, and
-`sync-references.sh` propagates it into each skill's `references/`. Edit the root file, then
-run the script. (Verified against the official plugins docs: files outside a plugin's own
-directory aren't copied to the install cache, so the repo-root copy can't be referenced
-post-install; and `${CLAUDE_PLUGIN_ROOT}` expands only in hook / MCP / LSP / monitor command
-strings, never in skill body prose.)
+**Why three copies of the blacklist?** Not because a skill *can't* read a file elsewhere —
+at runtime Claude consults the blacklist with the Read tool, which reads any path (the global
+`CLAUDE.md` Rule #0 deliberately points at an absolute `~/.claude/pinocchio_blacklist.md`).
+The real reason is **distribution self-containment**: when the plugin is installed, only files
+inside the plugin's own directory ship to the install cache, so a reference to the repo root —
+or to a global file the user may not have installed — would dangle post-install. Bundling a
+copy inside each skill keeps it self-contained. The canonical `pinocchio_blacklist.md` at the
+repo root stays the single source of truth, and `sync-references.sh` propagates it into each
+skill's `references/`. Edit the root file, then run the script. (Per the official plugins
+docs: files outside a plugin's own directory aren't copied to the install cache, and
+`${CLAUDE_PLUGIN_ROOT}` expands only in hook / MCP / LSP / monitor command strings, never in
+skill body prose — verify against current docs before relying on either.)
 
 ## The pieces
 
@@ -73,10 +77,10 @@ All three skills live under `plugins/explainer/skills/<name>/SKILL.md`:
 - All three suspend any active compression mode during the response, and route their factual
   claims through their bundled `references/pinocchio_blacklist.md` (the higher the tier, the
   more technical the claims and the heavier the anti-hallucination discipline).
-- **`pinocchio_blacklist.md` (anti-lie accessory)** — 11 AI-agent failure modes that
+- **`pinocchio_blacklist.md` (anti-lie accessory)** — 12 AI-agent failure modes that
   produce false or inflated claims (opinion dressed as a bug, "I verified" without reading,
   best-practice from training memory, paraphrasing errors instead of quoting, inflating a
-  PR/ticket, overengineering as diagnosis…).
+  PR/ticket, overengineering as diagnosis, stating a current version from memory…).
 - **`CLAUDE.md` (glue)** — conduct rules. **Rule #0** requires consulting the blacklist
   before asserting/recommending/reviewing; without it the catalog is inert. Also
   `#1 Verify Before Claiming`, `#1.5 Never Leak Secrets`, `#2 Evaluate, Don't Just Agree`,

@@ -61,6 +61,7 @@ Short scenario → choice table, OR a one-sentence practical summary ("today use
 - Light humor allowed, don't force it
 - Cite real proper names when you know them (RFC, BSD, freedesktop.org, a specific person) — don't invent
 - Sources at this tier are informal. If pointing the curious further, give a friendly direction they can check — a term to search, the name of the thing, or a well-known source you're sure exists. Never a made-up title, author, or URL: a search direction the reader can verify beats a precise-looking fake (the `pinocchio` rule at kid level — see the bundled `references/pinocchio_blacklist.md`)
+- Never give the "current" or "latest" version of something from memory — version facts go stale after the model is trained. Say "as of when I was trained — check the current version" or look it up; don't print a version number as if it's live (blacklist item 12).
 
 ## Anti-patterns
 

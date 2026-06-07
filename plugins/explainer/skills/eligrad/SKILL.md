@@ -107,6 +107,12 @@ installs it) and `#1 Verify Before Claiming`:
   official docs when you're sure of them; if unsure of the exact title/author/edition, give
   the precise search term or result name instead of a fabricated citation. A verifiable
   pointer beats a precise-looking fake reference.
+- **Recency/version facts (blacklist item 12):** never state a current/latest version,
+  release date, or "now at X" from training memory. Trigger on the token (any version
+  number, release date, "current/latest/as of now"), not on felt confidence — the failure
+  mode is confident-wrong (e.g. "Ruby 3.x" when 4.x shipped post-cutoff). Verify with a tool
+  (WebSearch / curl the registry), omit, or tag "as of training cutoff — verify current".
+  Stable structural facts need no live check.
 
 ## Anti-patterns
 

@@ -110,6 +110,12 @@ fabricated one is disqualifying.**
 6. **If asked for a reference you can't ground:** say so and describe what to search for
    (result name, likely venue/era, identifiers) rather than manufacturing a plausible
    citation. Treat any generated citation as a candidate to verify, never as fact.
+7. **Recency/version facts are cutoff-bound — verify or hedge (blacklist item 12).**
+   Current/latest version, release date, or "now at X" claims are the highest-confidence-wrong
+   class: a cutoff model feels no uncertainty (e.g. calling "Ruby 3.x" current after 4.x
+   shipped). Trigger on the token (version number, release date, "current/latest/as of now"),
+   not on felt confidence — verify with a tool, omit, or tag "as of training cutoff — verify
+   current". Stable structural/timeless facts need no live check.
 
 ## Anti-patterns
 
