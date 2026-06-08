@@ -117,6 +117,23 @@ fabricated one is disqualifying.**
    not on felt confidence — verify with a tool, omit, or tag "as of training cutoff — verify
    current". Stable structural/timeless facts need no live check.
 
+## Source verification (mandatory)
+
+The abstain-don't-fabricate rule above is the floor; this is the ceiling — and the order
+between them is fixed: for a checkable claim you intend to make, **attempt tool verification
+first, then fall back to the calibrated-uncertainty register only if verification fails.**
+Hedging stays the expert move (per the accuracy section) — but as the fallback, not a way to
+skip the attempt.
+
+- Numbers, bounds, rates, dates, versions, attributions, citations, theorem names → verify
+  via WebSearch / primary-doc fetch / registry before stating. If a tool can't ground it,
+  drop to the "cannot verify" register or omit.
+- `## References` carries only tool-verified primary sources. An unverifiable reference is
+  omitted, not softened into a plausible-looking guess.
+- Behavioral, not magic: skill text can't force the call — the accuracy section above already
+  notes prompt style alone doesn't fix fabrication. Treat verification as the required first
+  step.
+
 ## Anti-patterns
 
 - Condescending re-explanation of basics; defining standard terms; "as you may recall".

@@ -114,6 +114,24 @@ installs it) and `#1 Verify Before Claiming`:
   (WebSearch / curl the registry), omit, or tag "as of training cutoff — verify current".
   Stable structural facts need no live check.
 
+## Source verification (mandatory)
+
+Escalation of the Accuracy section above: where that says *flag the unverified*, this says
+*try to verify it first*. For the checkable claims it already enumerates — versions, dates,
+defaults, named results, statistics, and any specific complexity bound you're not certain is
+canonical — attempt a tool check (WebSearch / official docs / curl the registry) before
+asserting, then cite inline or under `## Going deeper`.
+
+- Verified → cite. Can't verify → omit, or mark explicitly unverified — the section's hedge is
+  the fallback, not the first move.
+- Carve-out unchanged: a genuinely canonical/textbook fact (merge sort is `O(n log n)`, the
+  result's standard name) needs no live call — confidence, not a search, settles it. Verify
+  the *specific or volatile* claim, not the timeless one (the same line item 12 draws for
+  version tokens).
+- A conceptual "how it works" narrative isn't a citable source; this targets the discrete
+  facts embedded in it, not the prose.
+- Behavioral: skill text can't force the call; treat it as obligatory (blacklist items 3, 9, 12).
+
 ## Anti-patterns
 
 - **Down-leak** (regressing to `eli5`): never reaching mechanism; un-redeemed metaphors;

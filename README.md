@@ -77,6 +77,11 @@ All three skills live under `plugins/explainer/skills/<name>/SKILL.md`:
 - All three suspend any active compression mode during the response, and route their factual
   claims through their bundled `references/pinocchio_blacklist.md` (the higher the tier, the
   more technical the claims and the heavier the anti-hallucination discipline).
+- All three carry a **Source verification (mandatory)** step: checkable facts (versions,
+  dates, numbers, named results) are tool-checked (WebSearch / docs) before being stated, not
+  recalled from memory; what can't be verified is omitted or marked unverified. It scales by
+  tier (light in `eli5`, strongest in `elidoc`). It's a behavioral rule — instructions to the
+  model, not a hard block.
 - **`pinocchio_blacklist.md` (anti-lie accessory)** — 12 AI-agent failure modes that
   produce false or inflated claims (opinion dressed as a bug, "I verified" without reading,
   best-practice from training memory, paraphrasing errors instead of quoting, inflating a

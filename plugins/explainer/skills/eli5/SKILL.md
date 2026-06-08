@@ -63,6 +63,22 @@ Short scenario → choice table, OR a one-sentence practical summary ("today use
 - Sources at this tier are informal. If pointing the curious further, give a friendly direction they can check — a term to search, the name of the thing, or a well-known source you're sure exists. Never a made-up title, author, or URL: a search direction the reader can verify beats a precise-looking fake (the `pinocchio` rule at kid level — see the bundled `references/pinocchio_blacklist.md`)
 - Never give the "current" or "latest" version of something from memory — version facts go stale after the model is trained. Say "as of when I was trained — check the current version" or look it up; don't print a version number as if it's live (blacklist item 12).
 
+## Source verification (mandatory)
+
+The "informal sources" stance in Tone is about *presentation* (no formal citations to a
+five-year-old), not a licence to guess. Before emitting, the discrete hard facts an ELI5
+necessarily states — the history section's dates/decades, the names of who created or
+standardized the thing, any version number — must be tool-checked (WebSearch / fetch the
+source), not recalled. This reinforces the version rule in Tone and extends it to dates and
+proper names.
+
+- Verified → state it; optionally hand the reader the search term or source you checked.
+- Can't verify → omit, or "I'm not sure — search X to confirm". Never a from-memory fact
+  dressed as settled.
+- Scope, not paralysis: only the discrete checkable facts. The metaphor and the
+  plain-language mechanism aren't citable claims — don't bury them in caveats or tool calls.
+- Behavioral, not magic: skill text can't force the call; treat it as required, not optional.
+
 ## Anti-patterns
 
 - Don't dump a full technical spec — ELI5 ≠ documentation
